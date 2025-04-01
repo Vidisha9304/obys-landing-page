@@ -1,0 +1,338 @@
+/* General Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "plain light";
+    font-weight: 500;
+    color: white;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    /* Prevents horizontal scroll */
+}
+
+
+/* Main container */
+
+#main {
+    background-color: #151515;
+    height: auto;
+    width: 100%;
+}
+
+
+/* Responsive Cursor */
+
+#crsr {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: transparent;
+    position: fixed;
+    z-index: 9990;
+    border: 1px solid white;
+}
+
+
+/* Loader */
+
+#loader {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    background-color: #000;
+    padding: 20vh 5vw;
+}
+
+
+/* Typography */
+
+.line h1 {
+    font-size: 5vw;
+    text-transform: uppercase;
+}
+
+
+/* Page1 */
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    background-color: #151515;
+    padding: 2vw;
+}
+
+
+/* Navigation */
+
+#nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vw 5vw;
+}
+
+#nav-part2 {
+    display: flex;
+    gap: 2vw;
+    font-size: 1rem;
+}
+
+#nav-part1 {
+    font-family: cursive;
+    font-style: italic;
+}
+
+
+/* Hero Section */
+
+.hero {
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    margin: 5vh 0;
+}
+
+.hero h1 {
+    font-size: 8vw;
+    font-weight: 500;
+}
+
+
+/* Page 2 - Video Section */
+
+#page2 {
+    height: auto;
+    width: 100%;
+    background-color: #151515;
+    text-align: center;
+}
+
+#video-container {
+    width: 90%;
+    height: auto;
+    margin: auto;
+}
+
+#video-container video {
+    width: 100%;
+    height: auto;
+}
+
+
+/* Page 3 */
+
+#page3 {
+    width: 100%;
+    padding: 10vh 2vw;
+}
+
+#page3 h1 {
+    font-size: 6vw;
+    text-align: center;
+}
+
+
+/* Image Grid */
+
+#image-div-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image-div {
+    width: 40%;
+    height: auto;
+    overflow: hidden;
+}
+
+.image-div img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+/* Circle Elements */
+
+#page3-circle1 {
+    height: 18vw;
+    width: 18vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 5vh auto;
+}
+
+.circle-in {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.circle-in p {
+    font-weight: 900;
+    color: #000;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+
+/* Hover Effects */
+
+#page3-circle1:hover .circle-in {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#page3-circle1:hover .circle-in p {
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+/* Page 4 */
+
+#page4 {
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    padding: 5vh 10vw;
+    text-align: center;
+}
+
+#page4 h1 {
+    font-size: 8vw;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+
+/* Footer */
+
+#footer {
+    height: auto;
+    width: 100%;
+    background-color: #151515;
+    padding: 5vh 10vw;
+    text-align: center;
+}
+
+#footer h1 {
+    font-size: 6vw;
+    text-transform: uppercase;
+}
+
+.underline {
+    height: 2px;
+    width: 80%;
+    background-color: white;
+    margin: 2vh auto;
+}
+
+#footer-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.box {
+    text-align: center;
+    margin: 2vh 0;
+}
+
+.box h5 {
+    font-size: 1.5vw;
+}
+
+.box h6 {
+    font-size: 1vw;
+}
+
+
+/* ✅ Responsive Media Queries */
+
+@media (max-width: 1024px) {
+    /* Adjust Circle Sizes */
+    #page3-circle1 {
+        height: 20vw;
+        width: 20vw;
+    }
+    .circle-in p {
+        font-size: 1.5vw;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Smaller Screens */
+    #nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    #video-container {
+        width: 100%;
+    }
+    .hero h1 {
+        font-size: 6vw;
+    }
+    .image-div {
+        width: 80%;
+    }
+    #footer h1 {
+        font-size: 5vw;
+    }
+    .box h5 {
+        font-size: 1.2vw;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Mobile Screens */
+    #nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero h1 {
+        font-size: 8vw;
+    }
+    #page3-circle1 {
+        height: 30vw;
+        width: 30vw;
+    }
+    .image-div {
+        width: 90%;
+    }
+    .circle-in p {
+        font-size: 2vw;
+    }
+    #footer h1 {
+        font-size: 4vw;
+    }
+    .box h5 {
+        font-size: 1vw;
+    }
+}
